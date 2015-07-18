@@ -30,8 +30,8 @@ class Grid
 
   def [](row, column)
     return nil unless row.between?(0, @rows - 1)
-    return nil unless columns.between?(0, @grid[row].count - 1)
-    @grid[row, column]
+    return nil unless column.between?(0, @grid[row].count - 1)
+    @grid[row][column]
   end
 
   def random_cell
@@ -56,5 +56,27 @@ class Grid
         yield cell if cell
       end
     end
+  end
+
+  def to_s
+    output = "+" + "---+" * columns + "\n"
+    each_row do |row|
+      top = "|"
+      bottom = "+"
+      row.each do |cell|
+        cell = Cell.new(-1, -1) unless cell
+        body = "   " # three spaces
+        east_boundary = cell.linked?(cell.east) ? " " : "|"
+        top << body << east_boundary
+        south_boundary = cell.linked?(cell.south) ? "   " : "---"
+        corner = "+"
+        bottom << south_boundary << corner
+      end
+
+      output << top << "\n"
+      output << bottom << "\n"
+    end
+
+    output
   end
 end
