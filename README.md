@@ -7,4 +7,4 @@ If you decide to follow along in Ruby, please make sure you’re using at least 
 
 All of the code examples in this book can be downloaded from the [book’s website](https://pragprog.com/book/jbmaze/mazes-for-programmers). This can save you a bit of time if you’d rather not rekey an entire grid framework by hand—although that’s certainly an effective way to learn something!”
 
-Excerpt From: Jamis Buck. “Mazes for Programmers (for Justin Kurtz).” iBooks.
+Copyrights apply to this source code. You may use the source code in your own projects, however the source code may not be used to create training material, courses, books, articles, and the like. We make no guarantees that this source code is fit for any purpose.
