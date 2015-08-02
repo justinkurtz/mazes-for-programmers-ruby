@@ -116,4 +116,14 @@ class Grid
   def background_color_for(cell)
     nil
   end
+
+  def deadends
+    list = []
+
+    each_cell do |cell|
+      list << cell if cell.links.count == 1
+    end
+
+    list
+  end
 end
